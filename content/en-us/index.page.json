@@ -2,7 +2,7 @@
    "viewType": "hub",
    "id": "index",
    "locale": "en-us",
-   "title": "Static Activity Hub Demo",
+   "title": "Static Activity Hub Test",
    "subtitle": "A small collection of pages used to exercise the static site generator.",
    "description": "These pages contain generic demonstration content and exist only to test the available page models.",
    "slug": "",
