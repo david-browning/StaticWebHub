@@ -1,0 +1,60 @@
+{
+   "viewType": "hub",
+   "id": "index",
+   "locale": "en-us",
+   "title": "Static Activity Hub Demo",
+   "subtitle": "A small collection of pages used to exercise the static site generator.",
+   "description": "These pages contain generic demonstration content and exist only to test the available page models.",
+   "slug": "",
+   "order": 0,
+   "isPublished": true,
+   "items": [
+      {
+         "title": "Activity Launcher",
+         "description": "Test launcher cards, prompts, tags, provider labels, and clipboard behavior.",
+         "target": "/en-us/activities/",
+         "icon": "🚀",
+         "tags": [
+            "Launcher",
+            "Interactive"
+         ]
+      },
+      {
+         "title": "Request Builder",
+         "description": "Test generated form controls and submission to an API endpoint.",
+         "target": "/en-us/request-builder/",
+         "icon": "📝",
+         "tags": [
+            "Form",
+            "POST"
+         ]
+      },
+      {
+         "title": "Information Page",
+         "description": "Test rendering a basic content-oriented page.",
+         "target": "/en-us/information/",
+         "icon": "📄",
+         "tags": [
+            "Content"
+         ]
+      },
+      {
+         "title": "Markdown Page",
+         "description": "Test rendering a basic content-oriented page.",
+         "target": "/en-us/markdown/",
+         "icon": "📃",
+         "tags": [
+            "Content"
+         ]
+      },
+      {
+         "title": "Redirect Test",
+         "description": "Test generation of a redirect page.",
+         "target": "/en-us/old-information/",
+         "icon": "↪",
+         "tags": [
+            "Redirect"
+         ]
+      }
+   ]
+}

@@ -1,0 +1,11 @@
+{
+   "viewType": "redirect",
+   "id": "old-information",
+   "locale": "en-us",
+   "title": "Information Page Moved",
+   "description": "A generated page used to test redirect behavior.",
+   "order": 40,
+   "isPublished": true,
+   "destination": "/en-us/information/",
+   "permanent": true
+}

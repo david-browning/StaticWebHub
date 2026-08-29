@@ -1,0 +1,29 @@
+<Solution>
+  <Folder Name="/api/">
+    <File Path="api/Test-Api.ps1" />
+    <Project Path="api/StaticActivityHub.Api/StaticActivityHub.Api.csproj" />
+  </Folder>
+  <Folder Name="/assets/">
+    <File Path="assets/site.css" />
+    <File Path="assets/site.js" />
+  </Folder>
+  <Folder Name="/content/" />
+  <Folder Name="/content/en-us/">
+    <File Path="content/en-us/activities.page.json" />
+    <File Path="content/en-us/index.page.json" />
+    <File Path="content/en-us/information.page.json" />
+    <File Path="content/en-us/markdown.page.json" />
+    <File Path="content/en-us/old-information.page.json" />
+    <File Path="content/en-us/request-builder.page.json" />
+    <File Path="content/en-us/unpublished-test.page.json" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="serve.cmd" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/StaticActivityHub.Generator/StaticActivityHub.Generator.csproj" />
+  </Folder>
+</Solution>

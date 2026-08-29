@@ -1,0 +1,11 @@
+{
+   "viewType": "content",
+   "id": "markdown",
+   "locale": "en-us",
+   "title": "Example Markdown Page",
+   "subtitle": "A generic page for testing markdown content.",
+   "description": "This page exercises headings, paragraphs, lists, links, and other ordinary document markup.",
+   "order": 30,
+   "isPublished": true,
+   "renderedContent": "{{content/markdown-page.md}}"
+}

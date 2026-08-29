@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "serve": "swa start ./dist --api-location ./api/StaticActivityHub.Api --open",
+    "serve:debug": "swa start ./dist --api-location http://localhost:7071 --open"
+  },
+  "devDependencies": {
+    "@azure/static-web-apps-cli": "^2.0.10"
+  }
+}

@@ -1,0 +1,10 @@
+{
+   "viewType": "content",
+   "id": "unpublished-test",
+   "locale": "en-us",
+   "title": "Unpublished Test Page",
+   "description": "This file should deserialize successfully but should not be written.",
+   "order": 999,
+   "isPublished": false,
+   "renderedContent": "<p>If this file appears in the generated site, the unpublished-page filtering is not working.</p>"
+}

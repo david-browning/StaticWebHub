@@ -1,0 +1,53 @@
+{
+   "viewType": "launcher",
+   "id": "activities",
+   "locale": "en-us",
+   "title": "Activity Launcher",
+   "subtitle": "Generic sample activities for testing launcher rendering.",
+   "description": "Choose an activity, inspect its sample prompt, and test the copy-to-clipboard behavior.",
+   "order": 10,
+   "isPublished": true,
+   "instructions": [
+      "Choose one of the sample activities below.",
+      "Review its description and optional guidance.",
+      "Preview or copy the generated prompt.",
+      "Use the copied text wherever you want to test it."
+   ],
+   "activities": [
+      {
+         "id": "brainstorm-names",
+         "title": "Brainstorm Names",
+         "description": "Generate possible names for an imaginary product or project.",
+         "tags": [
+            "Brainstorming",
+            "Names",
+            "Ideas"
+         ],
+         "tip": "Adding a target audience or desired tone usually produces more focused suggestions.",
+         "prompt": "Help me brainstorm ten names for an imaginary reusable water bottle designed for hikers. Give each name a one-sentence explanation.",
+         "provider": "Sample AI"
+      },
+      {
+         "id": "summarize-notes",
+         "title": "Organize Notes",
+         "description": "Turn a fictional collection of rough notes into a clean outline.",
+         "tags": [
+            "Organization",
+            "Writing"
+         ],
+         "tip": "The prompt deliberately asks the assistant not to invent missing information.",
+         "prompt": "Organize the following fictional notes into a concise outline. Preserve the original meaning and clearly mark anything that is ambiguous instead of filling in missing details.",
+         "provider": "Any Assistant"
+      },
+      {
+         "id": "compare-options",
+         "title": "Compare Options",
+         "description": "Ask an assistant to compare several imaginary choices using explicit criteria.",
+         "tags": [
+            "Comparison",
+            "Decision"
+         ],
+         "prompt": "Compare three fictional commuter bicycles using purchase price, weight, maintenance requirements, comfort, and suitability for a five-mile city commute. Present the result in a compact table."
+      }
+   ]
+}

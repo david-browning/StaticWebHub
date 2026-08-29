@@ -1,0 +1,339 @@
+﻿:root {
+   font-family: Inter, "Segoe UI", system-ui, sans-serif;
+   color: #202530;
+   background: #f5f7fa;
+   --surface: #ffffff;
+   --surface-alt: #f1f4f8;
+   --text: #202530;
+   --muted: #667085;
+   --primary: #315a85;
+   --primary-hover: #244565;
+   --border: #d8dee8;
+   --tip-background: #fff6df;
+   --tip-border: #e5ca85;
+   --radius: 10px;
+   line-height: 1.55;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   background: #f5f7fa;
+   color: var(--text);
+}
+
+.shell {
+   width: min( 1000px, calc(100% - 2rem));
+   margin-inline: auto;
+}
+
+.site-header {
+   padding-block: 3rem;
+   background: #24344d;
+   color: white;
+}
+
+   .site-header h1 {
+      margin: 0.35rem 0;
+      font-size: clamp( 2rem, 6vw, 3.5rem);
+      line-height: 1.1;
+   }
+
+.subtitle {
+   max-width: 700px;
+   margin: 0.5rem 0 0;
+   color: #d5deeb;
+   font-size: 1.1rem;
+}
+
+.page-type {
+   color: #9fb6d3;
+   font-size: 0.75rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 0.12em;
+}
+
+.page-content {
+   padding-block: 2rem 5rem;
+}
+
+.page-description {
+   max-width: 750px;
+   margin: 0 0 2rem;
+   color: var(--muted);
+   font-size: 1.1rem;
+}
+
+.card-grid {
+   display: grid;
+   grid-template-columns: repeat( auto-fit, minmax(280px, 1fr));
+   gap: 1rem;
+}
+
+.card {
+   display: flex;
+   flex-direction: column;
+   padding: 1.5rem;
+   background: var(--surface);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+}
+
+   .card h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.25rem;
+   }
+
+   .card p {
+      color: var(--muted);
+   }
+
+.hub-card {
+   color: inherit;
+   text-decoration: none;
+   transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+   .hub-card:hover {
+      border-color: #94abc7;
+      box-shadow: 0 5px 18px rgb(24 39 75 / 10%);
+      transform: translateY(-2px);
+   }
+
+.card-icon {
+   margin-bottom: 0.75rem;
+   font-size: 2rem;
+}
+
+.card-action {
+   margin-top: auto;
+   padding-top: 1rem;
+   color: var(--primary);
+   font-weight: 700;
+}
+
+.tags {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.4rem;
+   margin-block: 0.75rem;
+}
+
+.tag {
+   padding: 0.25rem 0.6rem;
+   border-radius: 999px;
+   background: #e7eef7;
+   color: #355778;
+   font-size: 0.8rem;
+   font-weight: 600;
+}
+
+.provider {
+   margin-bottom: 0.4rem;
+   color: var(--muted);
+   font-size: 0.75rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+}
+
+.tip {
+   margin-block: 1rem;
+   padding: 0.8rem 1rem;
+   background: var(--tip-background);
+   border: 1px solid var(--tip-border);
+   border-radius: 7px;
+}
+
+.instruction-panel {
+   margin-bottom: 2rem;
+   padding: 1.5rem;
+   background: var(--surface);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+}
+
+   .instruction-panel h2 {
+      margin-top: 0;
+   }
+
+.prompt-preview {
+   margin-block: 1rem;
+}
+
+   .prompt-preview pre,
+   .result-panel pre,
+   .plain-text {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      padding: 1rem;
+      background: #f2f4f7;
+      border-radius: 6px;
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 0.85rem;
+   }
+
+.button {
+   display: inline-block;
+   padding: 0.7rem 1rem;
+   border: 0;
+   border-radius: 7px;
+   cursor: pointer;
+   font: inherit;
+   font-weight: 700;
+   text-decoration: none;
+}
+
+.button-primary {
+   background: var(--primary);
+   color: white;
+}
+
+   .button-primary:hover {
+      background: var(--primary-hover);
+   }
+
+.activity-card .button {
+   margin-top: auto;
+}
+
+.generated-form {
+   max-width: 700px;
+   padding: 1.5rem;
+   background: var(--surface);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+}
+
+.form-field {
+   margin-bottom: 1.5rem;
+}
+
+   .form-field > label,
+   .form-field legend {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+   }
+
+   .form-field input[type="text"],
+   .form-field input[type="number"],
+   .form-field textarea,
+   .form-field select {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid #b9c2cf;
+      border-radius: 6px;
+      background: white;
+      color: var(--text);
+      font: inherit;
+   }
+
+   .form-field textarea {
+      min-height: 120px;
+      resize: vertical;
+   }
+
+   .form-field fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0;
+   }
+
+.checkbox-field,
+.radio-field {
+   display: flex !important;
+   align-items: flex-start;
+   gap: 0.6rem;
+   margin-block: 0.4rem;
+   font-weight: 400 !important;
+}
+
+.required {
+   color: #a82e2e;
+}
+
+.help-text {
+   margin-top: 0.35rem;
+   color: var(--muted);
+   font-size: 0.85rem;
+}
+
+.result-panel {
+   max-width: 700px;
+   margin-top: 2rem;
+   padding: 1.5rem;
+   background: var(--surface);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+}
+
+.status-message {
+   min-height: 1.5rem;
+   margin-top: 1rem;
+   color: var(--muted);
+}
+
+.content-document {
+   max-width: 800px;
+   padding: 2rem;
+   background: var(--surface);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+}
+
+   .content-document img {
+      max-width: 100%;
+   }
+
+   .content-document pre {
+      overflow-x: auto;
+   }
+
+   .content-document blockquote {
+      margin-left: 0;
+      padding-left: 1rem;
+      border-left: 4px solid var(--border);
+      color: var(--muted);
+   }
+
+.redirect-page {
+   display: grid;
+   min-height: 100vh;
+   place-items: center;
+}
+
+.redirect-card {
+   width: min(500px, 100%);
+   padding: 2rem;
+   background: var(--surface);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+   text-align: center;
+}
+
+.technical-note {
+   margin-top: 2rem;
+   color: var(--muted);
+   font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+   .site-header {
+      padding-block: 2rem;
+   }
+
+   .page-content {
+      padding-block: 1.5rem 3rem;
+   }
+
+   .generated-form,
+   .content-document {
+      padding: 1rem;
+   }
+}
