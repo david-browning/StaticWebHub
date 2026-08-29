@@ -1,0 +1,89 @@
+{
+   "viewType": "form",
+   "id": "request-builder",
+   "locale": "en-us",
+   "title": "Sample Request Builder",
+   "subtitle": "Exercise all of the supported form field types.",
+   "description": "This form contains generic fields intended only to test generation and POST behavior.",
+   "order": 20,
+   "isPublished": true,
+   "submitUrl": "/api/jsonrequest",
+   "submitText": "Submit Sample Request",
+   "fields": [
+      {
+         "id": "projectName",
+         "type": "text",
+         "label": "Project name",
+         "helpText": "Enter any fictional project name.",
+         "required": true,
+         "placeholder": "Example Project"
+      },
+      {
+         "id": "description",
+         "type": "textarea",
+         "label": "Description",
+         "helpText": "Provide a few sentences of sample text.",
+         "required": false,
+         "placeholder": "Describe the imaginary project..."
+      },
+      {
+         "id": "teamSize",
+         "type": "number",
+         "label": "Team size",
+         "helpText": "Tests numeric minimum and maximum attributes.",
+         "required": true,
+         "placeholder": "5",
+         "minimum": 1,
+         "maximum": 50
+      },
+      {
+         "id": "category",
+         "type": "select",
+         "label": "Category",
+         "helpText": "Tests generation of a select list.",
+         "required": true,
+         "options": [
+            {
+               "value": "research",
+               "label": "Research"
+            },
+            {
+               "value": "education",
+               "label": "Education"
+            },
+            {
+               "value": "entertainment",
+               "label": "Entertainment"
+            }
+         ]
+      },
+      {
+         "id": "includeSummary",
+         "type": "checkbox",
+         "label": "Include a short summary",
+         "helpText": "Tests boolean form values.",
+         "required": false
+      },
+      {
+         "id": "priority",
+         "type": "radio",
+         "label": "Priority",
+         "helpText": "Tests a radio-button group.",
+         "required": true,
+         "options": [
+            {
+               "value": "low",
+               "label": "Low"
+            },
+            {
+               "value": "normal",
+               "label": "Normal"
+            },
+            {
+               "value": "high",
+               "label": "High"
+            }
+         ]
+      }
+   ]
+}

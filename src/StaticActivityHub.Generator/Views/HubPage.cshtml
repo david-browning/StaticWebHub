@@ -1,0 +1,75 @@
+@*
+   Copyright (c) 2026 4F Software LLC.
+   SPDX-License-Identifier: MIT
+*@
+@model StaticActivityHub.Generator.Models.HubPage
+
+<!DOCTYPE html>
+<html lang="@Model.Locale">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>@Model.PageType</title>
+	<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+	<header class="site-header">
+		<div class="shell">
+			<div class="page-type">Hub</div>
+			<h1>@Model.PageType</h1>
+			@if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+			{
+				<p class="subtitle">@Model.Subtitle</p>
+			}
+		</div>
+	</header>
+
+	<main class="shell page-content">
+		@if (!string.IsNullOrWhiteSpace(Model.Description))
+		{
+			<p class="page-description">
+				@Model.Description
+			</p>
+		}
+
+		<div class="card-grid">
+			@foreach (var item in Model.Items)
+			{
+				<a class="card hub-card" href="@item.Target">
+					@if (!string.IsNullOrWhiteSpace(item.Icon))
+					{
+						<div class="card-icon">
+							@item.Icon
+						</div>
+					}
+
+					<h2>@item.Title</h2>
+
+					<p>
+						@item.Description
+					</p>
+
+					@if (item.Tags.Count > 0)
+					{
+						<div class="tags">
+							@foreach (var tag in item.Tags)
+							{
+								<span class="tag">
+									@tag
+								</span>
+							}
+						</div>
+					}
+
+					<span class="card-action">
+						Open →
+					</span>
+				</a>
+			}
+		</div>
+
+	</main>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+@*
+   Copyright (c) 2026 4F Software LLC.
+   SPDX-License-Identifier: MIT
+*@
+@model StaticActivityHub.Generator.Models.LauncherPage
+
+<!DOCTYPE html>
+<html lang="@Model.Locale">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>@Model.PageType</title>
+	<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+	<header class="site-header">
+		<div class="shell">
+			<div class="page-type">Launcher</div>
+			<h1>@Model.PageType</h1>
+			@if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+			{
+				<p class="subtitle">
+					@Model.Subtitle
+				</p>
+			}
+		</div>
+	</header>
+
+	<main class="shell page-content">
+		@if (!string.IsNullOrWhiteSpace(Model.Description))
+		{
+			<p class="page-description">
+				@Model.Description
+			</p>
+		}
+
+		@if (Model.Instructions.Count > 0)
+		{
+			<section class="instruction-panel">
+				<h2>How it works</h2>
+				<ol>
+					@foreach (var instruction in Model.Instructions)
+					{
+						<li>@instruction</li>
+					}
+				</ol>
+			</section>
+		}
+
+		<div class="card-grid">
+			@foreach (var activity in Model.Activities)
+			{
+				<article class="card activity-card">
+					@if (!string.IsNullOrWhiteSpace(activity.Provider))
+					{
+						<div class="provider">
+							@activity.Provider
+						</div>
+					}
+
+					<h2>@activity.Title</h2>
+					<p>
+						@activity.Description
+					</p>
+
+					@if (activity.Tags.Count > 0)
+					{
+						<div class="tags">
+							@foreach (var tag in activity.Tags)
+							{
+								<span class="tag">
+									@tag
+								</span>
+							}
+						</div>
+					}
+
+					@if (!string.IsNullOrWhiteSpace(activity.Tip))
+					{
+						<aside class="tip">
+							<strong>Tip:</strong>
+							@activity.Tip
+						</aside>
+					}
+
+					<details class="prompt-preview">
+						<summary>Preview prompt</summary>
+
+						<pre>@activity.Prompt</pre>
+					</details>
+
+					<button type="button" class="button button-primary"
+							data-copy-prompt="@activity.Id">
+						Copy prompt
+					</button>
+
+					<textarea id="@activity.Id" class="hidden-prompt"
+							  hidden>@activity.Prompt</textarea>
+
+				</article>
+			}
+		</div>
+
+		<div id="page-status" class="status-message"
+			 role="status" aria-live="polite">
+		</div>
+
+	</main>
+
+	<script src="/assets/site.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+   "profiles": {
+      "StaticActivityHub.Generator": {
+         "commandName": "Project",
+         "commandLineArgs": "--root $(SolutionDir)"
+      },
+      "SWA Local Server": {
+         "commandName": "Executable",
+         "executablePath": "cmd.exe",
+         "commandLineArgs": "/k npm run serve",
+         "workingDirectory": "$(SolutionDir)"
+      }
+   }
+}

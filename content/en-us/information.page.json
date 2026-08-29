@@ -1,0 +1,11 @@
+{
+   "viewType": "content",
+   "id": "information",
+   "locale": "en-us",
+   "title": "Example Information Page",
+   "subtitle": "A generic page for testing rendered content.",
+   "description": "This page exercises headings, paragraphs, lists, links, and other ordinary document markup.",
+   "order": 30,
+   "isPublished": true,
+   "renderedContent": "{{content/information-page.html}}"
+}
