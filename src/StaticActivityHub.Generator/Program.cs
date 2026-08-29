@@ -3,10 +3,13 @@
 using System;
 using System.CommandLine;
 using System.IO;
+using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using StaticActivityHub.Generator.Content;
 using StaticActivityHub.Generator.Generation;
+using StaticActivityHub.Generator.Models;
 
 namespace StaticActivityHub.Generator;
 
@@ -144,7 +147,11 @@ public static class Program
 
       try
       {
+         var siteConfiguration = await LoadSiteConfigurationAsync(
+            projectRoot.FullName, cancellationToken);
          await generator.GenerateAsync(cancellationToken);
+         await GenerateSiteIndexAsync(
+            siteConfiguration, outputRoot, cancellationToken);
          CopyAssets(assetRoot, outputRoot);
          return 0;
       }
@@ -164,6 +171,42 @@ public static class Program
 
          return 1;
       }
+   }
+
+   private static async Task<SiteConfiguration> LoadSiteConfigurationAsync(
+      string projectRoot,
+      CancellationToken cancellationToken)
+   {
+      var path = Path.Combine(projectRoot, "site.json");
+      if (!File.Exists(path))
+      {
+         throw new FileNotFoundException("Could not find site.json.", path);
+      }
+
+      await using var stream = File.OpenRead(path);
+
+      var configuration = await JsonSerializer.DeserializeAsync<SiteConfiguration>(
+         stream, new JsonSerializerOptions
+         {
+            PropertyNameCaseInsensitive = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+         },
+         cancellationToken);
+
+      return configuration ?? throw new JsonException(
+         "Could not deserialize site.json.");
+   }
+
+   private static async Task GenerateSiteIndexAsync(
+      SiteConfiguration configuration,
+      string outputRoot,
+      CancellationToken cancellationToken)
+   {
+      var renderer = new SiteIndexRenderer();
+      var html = await renderer.GenerateAsync(configuration, cancellationToken);
+      var outputPath = Path.Combine(outputRoot, "index.html");
+      await File.WriteAllTextAsync(
+         outputPath, html, Encoding.UTF8, cancellationToken);
    }
 
    private static string ResolvePath(string projectRoot, string path)

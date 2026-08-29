@@ -1,0 +1,21 @@
+{
+   "title": "Example Learning Hub",
+   "defaultLocale": "en-us",
+   "locales": [
+      {
+         "code": "en-us",
+         "displayName": "English",
+         "homePage": "index"
+      },
+      {
+         "code": "es-419",
+         "displayName": "Español",
+         "homePage": "index"
+      },
+      {
+         "code": "fr-002",
+         "displayName": "Français",
+         "homePage": "index"
+      }
+   ]
+}
