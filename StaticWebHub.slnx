@@ -22,6 +22,7 @@
     <File Path="LICENSE" />
     <File Path="README.md" />
     <File Path="serve.cmd" />
+    <File Path="swa-cli.config.json" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/StaticActivityHub.Generator/StaticActivityHub.Generator.csproj" />
