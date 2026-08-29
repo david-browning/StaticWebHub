@@ -9,7 +9,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>@Model.PageType</title>
+	<title>@Model.Title</title>
 	<link rel="stylesheet" href="/assets/site.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 	<header class="site-header">
 		<div class="shell">
 			<div class="page-type">Hub</div>
-			<h1>@Model.PageType</h1>
+			<h1>@Model.Title</h1>
 			@if (!string.IsNullOrWhiteSpace(Model.Subtitle))
 			{
 				<p class="subtitle">@Model.Subtitle</p>
