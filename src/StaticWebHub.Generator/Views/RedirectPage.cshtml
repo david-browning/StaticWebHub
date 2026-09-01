@@ -1,0 +1,35 @@
+@*
+   Copyright (c) 2026 4F Software LLC.
+   SPDX-License-Identifier: MIT
+*@
+@model StaticWebHub.Generator.Models.RedirectPage
+
+@{
+	Layout = "/Views/Shared/_BasicPageLayout.cshtml";
+}
+<main class="shell redirect-page">
+	<div class="redirect-card">
+		<div class="page-type">
+			Redirect
+		</div>
+
+		<h1>@Model.Title</h1>
+
+		<p>
+			This page has moved.
+		</p>
+
+		<p>
+			<a class="button button-primary" href="@Model.Destination">
+				Continue
+			</a>
+		</p>
+
+		<div class="technical-note">
+			Redirect preference:
+			@(Model.Permanent ? "Permanent" : "Temporary")
+		</div>
+
+	</div>
+
+</main>

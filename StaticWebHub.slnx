@@ -1,7 +1,7 @@
 <Solution>
   <Folder Name="/api/">
     <File Path="api/Test-Api.ps1" />
-    <Project Path="api/StaticActivityHub.Api/StaticActivityHub.Api.csproj" />
+    <Project Path="api/StaticWebHub.Api/StaticWebHub.Api.csproj" />
   </Folder>
   <Folder Name="/assets/">
     <File Path="assets/site.css" />
@@ -22,9 +22,10 @@
     <File Path="LICENSE" />
     <File Path="README.md" />
     <File Path="serve.cmd" />
+    <File Path="site.json" />
     <File Path="swa-cli.config.json" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/StaticActivityHub.Generator/StaticActivityHub.Generator.csproj" />
+    <Project Path="src/StaticWebHub.Generator/StaticWebHub.Generator.csproj" />
   </Folder>
 </Solution>
