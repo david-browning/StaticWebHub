@@ -1,0 +1,57 @@
+@*
+   Copyright (c) 2026 4F Software LLC.
+   SPDX-License-Identifier: MIT
+*@
+
+@model StaticWebHub.Generator.Models.SiteIndexViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>@Model.Title</title>
+	<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+	<header class="site-header">
+		<div class="shell">
+			<div class="page-type">
+				Welcome
+			</div>
+			<h1>@Model.Title</h1>
+			<p class="subtitle">
+				Choose a language to continue.
+			</p>
+		</div>
+	</header>
+
+	<main class="shell page-content">
+		<div class="card-grid">
+			@foreach (var locale in Model.Locales)
+			{
+				<a class="card hub-card" href="@locale.Url">
+					<h2>
+						@locale.DisplayName
+					</h2>
+
+					@if (locale.IsDefault)
+					{
+						<div class="tags">
+							<span class="tag">
+								Default
+							</span>
+						</div>
+					}
+
+					<span class="card-action">
+						Continue →
+					</span>
+
+				</a>
+			}
+		</div>
+	</main>
+</body>
+</html>
