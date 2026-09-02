@@ -26,10 +26,14 @@ jobs:
       - name: Restore Nuget Packages
         run: dotnet restore
 
+      - name: Run Tests
+        run: dotnet test StaticWebHub.slnx --configuration Release --no-restore        
+
       - name: Generate Static Site
         run: >
           dotnet run 
           --project src/StaticWebHub.Generator
+          --configuration Release
           --
           --root "$GITHUB_WORKSPACE"
           --clean
