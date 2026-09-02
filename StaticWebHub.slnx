@@ -28,4 +28,7 @@
   <Folder Name="/src/">
     <Project Path="src/StaticWebHub.Generator/StaticWebHub.Generator.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/StaticWebHub.Generator.Tests/StaticWebHub.Generator.Tests.csproj" />
+  </Folder>
 </Solution>

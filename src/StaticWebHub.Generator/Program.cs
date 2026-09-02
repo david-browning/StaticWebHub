@@ -163,6 +163,11 @@ public static class Program
          var siteConfiguration = await LoadSiteConfigurationAsync(
             projectRoot.FullName, cancellationToken);
          var results = await generator.GenerateAsync(cancellationToken);
+         if(!results.Succeeded)
+         {
+            return 1;
+         }
+
          PrintGeneratorResults(results);
          await GenerateSiteIndexAsync(
             siteConfiguration, outputRoot, cancellationToken);
@@ -239,7 +244,7 @@ public static class Program
       }
       else if(message.Severity == ValidationSeverity.Error)
       {
-         Console.ForegroundColor= ConsoleColor.Red;
+         Console.ForegroundColor = ConsoleColor.Red;
       }
 
       Console.WriteLine(FormatValidationMessage(message));
