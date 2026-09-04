@@ -26,6 +26,16 @@ internal class FormPageValidator : PageValidator<FormPage>
             page.Id);
       }
 
+      // Property is supplied by default but check it in case the user 
+      // overwrote it.
+      if (string.IsNullOrWhiteSpace(page.FormId))
+      {
+         builder.AddError(
+            ValidationCodes.RequiredValueEmpty,
+            "The form is missing an Id.",
+            page.Id);
+      }
+
       if (page.Fields.Count == 0)
       {
          builder.AddWarning(
@@ -50,11 +60,8 @@ internal class FormPageValidator : PageValidator<FormPage>
    {
       if (string.IsNullOrWhiteSpace(page.SubmitUrl))
       {
-         builder.AddError(
-            ValidationCodes.RequiredValueEmpty,
-            "The form is missing a submit URL.",
-            page.Id);
-
+         // User likely wants to use JavaScript instead of POSTing. Skip
+         // additional submit validation.
          return;
       }
 

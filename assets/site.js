@@ -22,9 +22,8 @@ document.addEventListener("click", async event => {
 });
 
 // Wire up an event for when a user submits a form.
-const generatedForm = document.getElementById("generated-form");
-if (generatedForm) {
-   generatedForm.addEventListener("submit", submitGeneratedForm);
+for (const form of document.querySelectorAll(".generated-form[data-submit-url]")) {
+   form.addEventListener("submit", submitGeneratedForm);
 }
 
 async function submitGeneratedForm(event) {

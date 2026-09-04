@@ -9,9 +9,14 @@ internal sealed class FormPage : BasicPage
 {
    public override PageType PageType => PageType.Form;
 
-   public required string SubmitUrl { get; init; }
+   /// <summary>
+   /// Optional in case the user wants to use JavaScript.
+   /// </summary>
+   public string? SubmitUrl { get; init; }
 
    public required string SubmitText { get; init; }
+
+   public string FormId { get; init; } = "generated-form";
 
    public required IReadOnlyList<FormField> Fields { get; init; }
 }
