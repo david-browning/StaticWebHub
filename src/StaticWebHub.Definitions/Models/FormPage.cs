@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace StaticWebHub.Generator.Models;
+namespace StaticWebHub.Definitions.Models;
 
-internal sealed class FormPage : BasicPage
+public sealed class FormPage : BasicPage
 {
    public override PageType PageType => PageType.Form;
 
@@ -21,7 +21,7 @@ internal sealed class FormPage : BasicPage
    public required IReadOnlyList<FormField> Fields { get; init; }
 }
 
-internal sealed class FormField
+public sealed class FormField
 {
    public required string Id { get; init; }
 
@@ -53,7 +53,7 @@ public enum FormFieldType
    Radio
 }
 
-internal sealed class FormOption
+public sealed class FormOption
 {
    public required string Value { get; init; }
 

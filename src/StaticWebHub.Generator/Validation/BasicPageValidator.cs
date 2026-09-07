@@ -6,7 +6,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using StaticWebHub.Generator.Content;
-using StaticWebHub.Generator.Models;
+using StaticWebHub.Definitions.Models;
 
 namespace StaticWebHub.Generator.Validation;
 

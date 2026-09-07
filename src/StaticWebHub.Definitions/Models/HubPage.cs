@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: MIT
 using System.Collections.Generic;
 
-namespace StaticWebHub.Generator.Models;
+namespace StaticWebHub.Definitions.Models;
 
-internal sealed class HubPage : BasicPage
+public sealed class HubPage : BasicPage
 {
    public override PageType PageType => PageType.Hub;
 
    public required IReadOnlyList<HubItem> Items { get; init; }
 }
 
-internal sealed class HubItem
+public sealed class HubItem
 {
    public required string Title { get; init; }
 

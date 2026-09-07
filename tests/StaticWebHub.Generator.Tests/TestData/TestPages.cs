@@ -1,7 +1,7 @@
 // Copyright (c) 2026 4F Software LLC.
 // SPDX-License-Identifier: MIT
 using System.Collections.Generic;
-using StaticWebHub.Generator.Models;
+using StaticWebHub.Definitions.Models;
 
 namespace StaticWebHub.Generator.Tests.TestData;
 

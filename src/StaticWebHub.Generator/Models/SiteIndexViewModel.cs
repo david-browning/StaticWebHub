@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace StaticWebHub.Generator.Models;
+namespace StaticWebHub.Definitions.Models;
 
 internal sealed class SiteIndexViewModel
 {

@@ -1,0 +1,543 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "viewType"
+  ],
+  "anyOf": [
+    {
+      "properties": {
+        "viewType": {
+          "const": "hub"
+        },
+        "pageType": {
+          "enum": [
+            "hub",
+            "launcher",
+            "form",
+            "content",
+            "redirect"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "icon": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "title",
+              "description",
+              "target"
+            ]
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer"
+        },
+        "isPublished": {
+          "type": "boolean"
+        },
+        "scripts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "assetKey": {
+                "type": "string"
+              },
+              "defer": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "assetKey"
+            ]
+          }
+        },
+        "styleSheets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "assetKey": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "assetKey"
+            ]
+          }
+        }
+      },
+      "required": [
+        "items",
+        "id",
+        "locale",
+        "title"
+      ]
+    },
+    {
+      "properties": {
+        "viewType": {
+          "const": "launcher"
+        },
+        "pageType": {
+          "enum": [
+            "hub",
+            "launcher",
+            "form",
+            "content",
+            "redirect"
+          ]
+        },
+        "instructions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "activities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tip": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "prompt": {
+                "type": "string"
+              },
+              "provider": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "description",
+              "prompt"
+            ]
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer"
+        },
+        "isPublished": {
+          "type": "boolean"
+        },
+        "scripts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/anyOf/0/properties/scripts/items"
+          }
+        },
+        "styleSheets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/anyOf/0/properties/styleSheets/items"
+          }
+        }
+      },
+      "required": [
+        "activities",
+        "id",
+        "locale",
+        "title"
+      ]
+    },
+    {
+      "properties": {
+        "viewType": {
+          "const": "form"
+        },
+        "pageType": {
+          "enum": [
+            "hub",
+            "launcher",
+            "form",
+            "content",
+            "redirect"
+          ]
+        },
+        "submitUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "submitText": {
+          "type": "string"
+        },
+        "formId": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "text",
+                  "textarea",
+                  "number",
+                  "select",
+                  "checkbox",
+                  "radio"
+                ]
+              },
+              "label": {
+                "type": "string"
+              },
+              "helpText": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "placeholder": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "minimum": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "maximum": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "label"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "label"
+            ]
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer"
+        },
+        "isPublished": {
+          "type": "boolean"
+        },
+        "scripts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/anyOf/0/properties/scripts/items"
+          }
+        },
+        "styleSheets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/anyOf/0/properties/styleSheets/items"
+          }
+        }
+      },
+      "required": [
+        "submitText",
+        "fields",
+        "id",
+        "locale",
+        "title"
+      ]
+    },
+    {
+      "properties": {
+        "viewType": {
+          "const": "content"
+        },
+        "pageType": {
+          "enum": [
+            "hub",
+            "launcher",
+            "form",
+            "content",
+            "redirect"
+          ]
+        },
+        "renderedContent": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer"
+        },
+        "isPublished": {
+          "type": "boolean"
+        },
+        "scripts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/anyOf/0/properties/scripts/items"
+          }
+        },
+        "styleSheets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/anyOf/0/properties/styleSheets/items"
+          }
+        }
+      },
+      "required": [
+        "renderedContent",
+        "id",
+        "locale",
+        "title"
+      ]
+    },
+    {
+      "properties": {
+        "viewType": {
+          "const": "redirect"
+        },
+        "pageType": {
+          "enum": [
+            "hub",
+            "launcher",
+            "form",
+            "content",
+            "redirect"
+          ]
+        },
+        "destination": {
+          "type": "string"
+        },
+        "permanent": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer"
+        },
+        "isPublished": {
+          "type": "boolean"
+        },
+        "scripts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/anyOf/0/properties/scripts/items"
+          }
+        },
+        "styleSheets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/anyOf/0/properties/styleSheets/items"
+          }
+        }
+      },
+      "required": [
+        "destination",
+        "id",
+        "locale",
+        "title"
+      ]
+    }
+  ]
+}

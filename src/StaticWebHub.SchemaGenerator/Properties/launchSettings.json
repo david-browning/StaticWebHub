@@ -1,0 +1,14 @@
+{
+   "profiles": {
+      "Schema Generator": {
+         "commandName": "Project",
+         "workingDirectory": "$(SolutionDir)",
+         "commandLineArgs": "schemas"
+      },
+      "Check Schemas": {
+         "commandName": "Project",
+         "workingDirectory": "$(SolutionDir)",
+         "commandLineArgs": "--check schemas"
+      }
+   }
+}

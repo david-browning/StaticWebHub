@@ -1,8 +1,8 @@
 ﻿// Copyright (c) 2026 4F Software LLC.
 // SPDX-License-Identifier: MIT
-namespace StaticWebHub.Generator.Models;
+namespace StaticWebHub.Definitions.Models;
 
-internal sealed class ContentPage : BasicPage
+public sealed class ContentPage : BasicPage
 {
    public override PageType PageType => PageType.Content;
 

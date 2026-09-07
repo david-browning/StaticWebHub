@@ -3,9 +3,9 @@
 
 using System.Collections.Generic;
 
-namespace StaticWebHub.Generator.Models;
+namespace StaticWebHub.Definitions.Models;
 
-internal sealed class SiteConfiguration
+public sealed class SiteConfiguration
 {
    public required string Title { get; init; }
 
@@ -14,7 +14,7 @@ internal sealed class SiteConfiguration
    public required IReadOnlyList<SiteLocale> Locales { get; init; }
 }
 
-internal sealed class SiteLocale
+public sealed class SiteLocale
 {
    public required string Code { get; init; }
 
