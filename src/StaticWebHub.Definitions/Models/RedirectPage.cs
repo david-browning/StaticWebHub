@@ -1,8 +1,8 @@
 ﻿// Copyright (c) 2026 4F Software LLC.
 // SPDX-License-Identifier: MIT
-namespace StaticWebHub.Generator.Models;
+namespace StaticWebHub.Definitions.Models;
 
-internal sealed class RedirectPage : BasicPage
+public sealed class RedirectPage : BasicPage
 {
    public override PageType PageType => PageType.Redirect;
 

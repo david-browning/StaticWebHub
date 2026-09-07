@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: MIT
 using System.Collections.Generic;
 
-namespace StaticWebHub.Generator.Models;
+namespace StaticWebHub.Definitions.Models;
 
-internal sealed class LauncherPage : BasicPage
+public sealed class LauncherPage : BasicPage
 {
    public override PageType PageType => PageType.Launcher;
 
@@ -13,7 +13,7 @@ internal sealed class LauncherPage : BasicPage
    public required IReadOnlyList<LauncherActivity> Activities { get; init; }
 }
 
-internal sealed class LauncherActivity
+public sealed class LauncherActivity
 {
    public required string Id { get; init; }
 

@@ -26,9 +26,15 @@
     <File Path="swa-cli.config.json" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/StaticWebHub.Generator/StaticWebHub.Generator.csproj" />
+    <Project Path="src/StaticWebHub.Definitions/StaticWebHub.Definitions.csproj" />
+    <Project Path="src/StaticWebHub.Generator/StaticWebHub.Generator.csproj">
+      <BuildDependency Project="src/StaticWebHub.Definitions/StaticWebHub.Definitions.csproj" />
+    </Project>
+    <Project Path="src/StaticWebHub.SchemaGenerator/StaticWebHub.SchemaGenerator.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/StaticWebHub.Generator.Tests/StaticWebHub.Generator.Tests.csproj" />
+    <Project Path="tests/StaticWebHub.Generator.Tests/StaticWebHub.Generator.Tests.csproj">
+      <BuildDependency Project="src/StaticWebHub.Definitions/StaticWebHub.Definitions.csproj" />
+    </Project>
   </Folder>
 </Solution>

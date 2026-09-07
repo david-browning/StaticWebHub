@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
-using StaticWebHub.Generator.Models;
+using StaticWebHub.Definitions.Models;
 
 namespace StaticWebHub.Generator.Validation;
 

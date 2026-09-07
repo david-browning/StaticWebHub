@@ -8,10 +8,11 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using StaticWebHub.Definitions.Models;
+using StaticWebHub.Definitions.Serialization;
 using StaticWebHub.Generator.Content;
 using StaticWebHub.Generator.Generation;
 using StaticWebHub.Generator.IO;
-using StaticWebHub.Generator.Models;
 using StaticWebHub.Generator.Rendering;
 using StaticWebHub.Generator.Serializing;
 using StaticWebHub.Generator.Validation;
@@ -163,7 +164,7 @@ public static class Program
          var siteConfiguration = await LoadSiteConfigurationAsync(
             projectRoot.FullName, cancellationToken);
          var results = await generator.GenerateAsync(cancellationToken);
-         if(!results.Succeeded)
+         if (!results.Succeeded)
          {
             return 1;
          }
@@ -215,14 +216,9 @@ public static class Program
       }
 
       await using var stream = File.OpenRead(path);
-
+      var options = StaticWebHubJson.CreateSerializerOptions();
       var configuration = await JsonSerializer.DeserializeAsync<SiteConfiguration>(
-         stream, new JsonSerializerOptions
-         {
-            PropertyNameCaseInsensitive = true,
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-         },
-         cancellationToken);
+         stream, options, cancellationToken);
 
       return configuration ?? throw new JsonException(
          "Could not deserialize site.json.");
@@ -230,7 +226,7 @@ public static class Program
 
    private static void PrintGeneratorResults(GenerationResult result)
    {
-      foreach(var message in result.Validation.Messages)
+      foreach (var message in result.Validation.Messages)
       {
          PrintValidationMessage(message);
       }
@@ -242,7 +238,7 @@ public static class Program
       {
          Console.ForegroundColor = ConsoleColor.Yellow;
       }
-      else if(message.Severity == ValidationSeverity.Error)
+      else if (message.Severity == ValidationSeverity.Error)
       {
          Console.ForegroundColor = ConsoleColor.Red;
       }

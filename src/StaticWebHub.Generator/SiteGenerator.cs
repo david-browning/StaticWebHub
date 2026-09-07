@@ -3,6 +3,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using StaticWebHub.Definitions.Models;
 using StaticWebHub.Generator.Generation;
 using StaticWebHub.Generator.IO;
 using StaticWebHub.Generator.Serializing;
@@ -34,7 +35,7 @@ internal sealed class SiteGenerator
       await foreach (var source in pages)
       {
          await using var input = await source.OpenReadAsync(cancellationToken);
-         Models.BasicPage? page = null;
+         BasicPage? page = null;
          try
          {
             page = await _pageDeserializer.DeserializeAsync(

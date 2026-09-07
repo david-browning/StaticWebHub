@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using StaticWebHub.Generator.Models;
+using StaticWebHub.Definitions.Models;
 
 namespace StaticWebHub.Generator.Tests.TestData;
 

@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace StaticWebHub.Generator.Models;
+namespace StaticWebHub.Definitions.Models;
 
 [JsonPolymorphic(
    TypeDiscriminatorPropertyName = "viewType")]
@@ -12,7 +12,7 @@ namespace StaticWebHub.Generator.Models;
 [JsonDerivedType(typeof(FormPage), "form")]
 [JsonDerivedType(typeof(ContentPage), "content")]
 [JsonDerivedType(typeof(RedirectPage), "redirect")]
-internal abstract class BasicPage
+public abstract class BasicPage
 {
    public required string Id { get; init; }
 
@@ -38,7 +38,7 @@ internal abstract class BasicPage
    public IReadOnlyList<StylesheetLinkReference> StyleSheets { get; init; } = [];
 }
 
-internal enum PageType
+public enum PageType
 {
    Hub,
    Launcher,

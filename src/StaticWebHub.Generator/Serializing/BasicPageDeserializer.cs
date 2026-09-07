@@ -7,8 +7,9 @@ using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
+using StaticWebHub.Definitions.Models;
+using StaticWebHub.Definitions.Serialization;
 using StaticWebHub.Generator.Content;
-using StaticWebHub.Generator.Models;
 
 namespace StaticWebHub.Generator.Serializing;
 
@@ -18,25 +19,8 @@ internal class BasicPageDeserializer : IPageDeserializer
    {
       ArgumentNullException.ThrowIfNull(assetResolver);
       _assetResolver = assetResolver;
-
-      _options =
-          new JsonSerializerOptions
-          {
-             PropertyNameCaseInsensitive = true,
-             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-             ReadCommentHandling = JsonCommentHandling.Skip,
-             AllowTrailingCommas = true,
-             AllowOutOfOrderMetadataProperties = true,
-          };
-
-      _options.Converters.Add(
-         new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
-
-      _documentOptions = new JsonDocumentOptions
-      {
-         CommentHandling = JsonCommentHandling.Skip,
-         AllowTrailingCommas = true
-      };
+      _options = StaticWebHubJson.CreateSerializerOptions();
+      _documentOptions = StaticWebHubJson.CreateDocumentOptions();
    }
 
    public async Task<BasicPage> DeserializeAsync(
