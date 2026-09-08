@@ -29,6 +29,15 @@ jobs:
       - name: Run Tests
         run: dotnet test StaticWebHub.slnx --configuration Release --no-restore        
 
+      - name: Verify JSON Schemas
+        run: >
+          dotnet run
+          --project src/StaticWebHub.SchemaGenerator
+          --configuration Release
+          --no-restore
+          --
+          --check schemas
+
       - name: Generate Static Site
         run: >
           dotnet run 
